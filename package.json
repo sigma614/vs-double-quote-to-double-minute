@@ -37,12 +37,12 @@
         {
           "command": "double-quote-to-double-minute.toMinute",
           "group": "1_run@1",
-          "when": "config.double-quote-to-double-minute.enabled && editorFocus"
+          "when": "config.double-quote-to-double-minute.enabled"
         },
         {
           "command": "double-quote-to-double-minute.toQuote",
           "group": "1_run@2",
-          "when": "config.double-quote-to-double-minute.enabled && editorFocus"
+          "when": "config.double-quote-to-double-minute.enabled"
         }
       ]
     }
@@ -57,6 +57,8 @@
     "eslint": "^8.50.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^16.1.0",
     "typescript": "^5.2.2"
   },
   "engines": {
@@ -72,7 +74,8 @@
     "package": "vsce package",
     "pretest": "npm run compile && npm run lint",
     "publish": "vsce publish",
-    "test": "mocha out/test",
+    "test": "mocha --paralle",
+    "coverage": "nyc mocha --parallel --recursive",
     "vscode:prepublish": "npm run compile",
     "watch": "tsc -watch -p ./"
   },

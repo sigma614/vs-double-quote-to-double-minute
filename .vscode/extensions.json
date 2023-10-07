@@ -6,6 +6,7 @@
         "esbenp.prettier-vscode",
         "bierner.emojisense",
         "michelemelluso.gitignore",
-        "richie5um2.vscode-sort-json"
+        "richie5um2.vscode-sort-json",
+        "ryanluker.vscode-coverage-gutters"
     ]
 }

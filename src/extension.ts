@@ -14,7 +14,7 @@ export function activate(context: ExtensionContext) {
 			return
 		}
 		const text = main.getQuoteToMinute(doc.getText())
-		const uri = getUnixUri(doc.fileName)
+		const uri = getUri(doc.fileName)
 		await writeText(text, uri)
 	})
 	const command2 = commands.registerCommand(`${extensionName}.toQuote`, async () => {
@@ -23,7 +23,7 @@ export function activate(context: ExtensionContext) {
 			return
 		}
 		const text = main.getMinuteToQuote(doc.getText())
-		const uri = getUnixUri(doc.fileName)
+		const uri = getUri(doc.fileName)
 		await writeText(text, uri)
 	})
 	context.subscriptions.push(command1)
@@ -33,9 +33,8 @@ export function activate(context: ExtensionContext) {
  * パスをUnix形式のUrlに変換
  * @param path 
  */
-export function getUnixUri(path: string): Uri {
-	const unixPath = path.replaceAll('\\', '/')
-		.replace('c:', '/c:')
+export function getUri(path: string): Uri {
+	const unixPath = main.getUnixPath(path)
 	return Uri.parse(unixPath)
 }
 /**

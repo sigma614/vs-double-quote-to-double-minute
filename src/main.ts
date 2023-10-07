@@ -24,3 +24,12 @@ export function getMinuteToQuote(str: string): string {
   return str.replaceAll('〝', '“')
     .replaceAll('〟', '”')
 }
+
+/**
+ * パスをUnix形式に変換
+ * @param path 
+ */
+export function getUnixPath(path: string): string {
+	return path.replaceAll('\\', '/')
+		.replace(/^([a-z]):/, '/$1:')
+}

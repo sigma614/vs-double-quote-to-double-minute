@@ -30,3 +30,17 @@ suite('getReplateMinuteToQuote', () => {
     strictEqual(main.getMinuteToQuote('str'), 'str')
   })
 })
+suite('getUnixPath', () => {
+  test('全てのバックスラッシュをスラッシュに変換', () => {
+    strictEqual(main.getUnixPath('\\'), '/')
+  })
+  test('先頭のドライブ表記前にスラッシュを追加', () => {
+    strictEqual(main.getUnixPath('c:'), '/c:')
+  })
+  test('先頭以外のドライブ表記は置換しない', () => {
+    strictEqual(main.getUnixPath(' c:'), ' c:')
+  })
+  test('検索文字がなければ置換しない', () => {
+    strictEqual(main.getUnixPath('/c/Users'), '/c/Users')
+  })
+})

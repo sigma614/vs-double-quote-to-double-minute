@@ -1,4 +1,4 @@
 watch-files:
   - 'out/**.js'
   - 'out/test/suite/**.test.js'
-parallel: true
+spec: 'out/test/*.test.js'
