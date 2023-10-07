@@ -1,4 +1,9 @@
 {
+  "description": "Replace full-width double quotation marks (“”) and full-width double minutiae (〝〟).",
+  "displayName": "double-quote-to-double-minute",
+  "main": "./out/extension.js",
+  "name": "vs-double-quote-to-double-minute",
+  "version": "1.0.0",
   "categories": [
     "Formatters"
   ],
@@ -6,39 +11,40 @@
     "commands": [
       {
         "command": "double-quote-to-double-minute.toMinute",
-        "title": "Double Quote To Double Minute"
+        "title": "Double Quote To Double Minute",
+        "enablement": "config.double-quote-to-double-minute.enabled"
       },
       {
         "command": "double-quote-to-double-minute.toQuote",
-        "title": "Double Minute To Double Quote"
+        "title": "Double Minute To Double Quote",
+        "enablement": "config.double-quote-to-double-minute.enabled"
       }
     ],
     "configuration": {
+      "title": "Double Quote To Double Minute",
       "properties": {
         "double-quote-to-double-minute.enabled": {
-          "default": true,
           "description": "Enable/disable this extension.",
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         }
-      },
-      "title": "Double Quote To Double Minute"
+      }
     },
     "menus": {
       "editor/context": [
         {
           "command": "double-quote-to-double-minute.toMinute",
-          "group": "myGroup@1",
-          "when": "editorFocus"
+          "group": "1_run@1",
+          "when": "config.double-quote-to-double-minute.enabled && editorFocus"
         },
         {
           "command": "double-quote-to-double-minute.toQuote",
-          "group": "myGroup@2",
-          "when": "editorFocus"
+          "group": "1_run@2",
+          "when": "config.double-quote-to-double-minute.enabled && editorFocus"
         }
       ]
     }
   },
-  "description": "Replace full-width double quotation marks (“”) and full-width double minutiae (〝〟).",
   "devDependencies": {
     "@types/mocha": "^10.0.2",
     "@types/node": "18.x",
@@ -51,13 +57,9 @@
     "mocha": "^10.2.0",
     "typescript": "^5.2.2"
   },
-  "displayName": "double-quote-to-double-minute",
   "engines": {
     "vscode": "^1.83.0"
   },
-  "main": "./out/extension.js",
-  "name": "vs-double-quote-to-double-minute",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:sigma614/vs-double-quote-to-double-minute.git"
@@ -70,7 +72,6 @@
     "vscode:prepublish": "npm run compile",
     "watch": "tsc -watch -p ./"
   },
-  "version": "0.0.1",
   "volta": {
     "node": "18.18.0",
     "npm": "10.2.0"

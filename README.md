@@ -1,23 +1,20 @@
 # double-quote-to-double-minute README
 
-現在開いているファイルに対して以下の一括置換を行います。
-
-- 全角ダブル引用符（“”）を全角ダブルミニュート（〝〟）に
-- 全角ダブルミニュート（〝〟）を全角ダブル引用符（“”）に
+現在開いているファイルに対して、全角ダブル引用符（“”）と全角ダブルミニュート（〝〟）を一括置換します。
 
 ## Features
 
 コマンドパレット、コンテキストメニューから実行できます。
 
-- `Double Quote To Double Minute`: 全角ダブル引用符（“”）を全角ダブルミニュート（〝〟）に変換します。
-- `Double Minute To Double Quote`: 全角ダブルミニュート（〝〟）を全角ダブル引用符（“”）に変換します。
+- `Double Quote To Double Minute`: 全角ダブル引用符（“”）を全角ダブルミニュート（〝〟）に置換します。
+- `Double Minute To Double Quote`: 全角ダブルミニュート（〝〟）を全角ダブル引用符（“”）に置換します。
 
 ## Extension Settings
 
-- `double-quote-to-double-minute.enable`: この拡張機能を有効/無効にします。
+- `double-quote-to-double-minute.enabled`: この拡張機能を有効/無効にします。
 
 ## Release Notes
 
-## 0.0.1
+## 1.0.0
 
 作成

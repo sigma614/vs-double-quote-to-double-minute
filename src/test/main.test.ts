@@ -1,7 +1,7 @@
 import { suite, test } from 'mocha'
 import { strictEqual } from 'assert'
 
-import * as main from '../../main'
+import * as main from '../main'
 
 suite('getVSCodeErrorMessage', () => {
   test('vscodeの要素がないエラーを表示', () => {
