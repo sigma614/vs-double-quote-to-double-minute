@@ -1,7 +1,12 @@
-out
+/out/*
+!out/e2e
+out/e2e/*.js
+out/e2e/*.js.map
+!out/e2e/test.txt
 dist
 node_modules
 .vscode-test/
 *.vsix
 /coverage
 /.nyc_output
+/out/e2e/.vscode
