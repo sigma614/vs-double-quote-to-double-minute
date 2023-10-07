@@ -1,6 +1,7 @@
 {
   "description": "Replace full-width double quotation marks (“”) and full-width double minutiae (〝〟).",
   "displayName": "double-quote-to-double-minute",
+  "license": "MIT",
   "main": "./out/extension.js",
   "name": "vs-double-quote-to-double-minute",
   "version": "1.0.0",
@@ -11,13 +12,8 @@
     "commands": [
       {
         "command": "double-quote-to-double-minute.toMinute",
-        "title": "Double Quote To Double Minute",
-        "enablement": "config.double-quote-to-double-minute.enabled"
-      },
-      {
-        "command": "double-quote-to-double-minute.toQuote",
-        "title": "Double Minute To Double Quote",
-        "enablement": "config.double-quote-to-double-minute.enabled"
+        "enablement": "config.double-quote-to-double-minute.enabled",
+        "title": "Double Quote To Double Minute"
       }
     ],
     "configuration": {
@@ -67,8 +63,10 @@
   "scripts": {
     "compile": "tsc -p ./",
     "lint": "eslint src --ext ts",
+    "package": "vsce package",
     "pretest": "npm run compile && npm run lint",
-    "test": "mocha out/test/suite",
+    "publish": "vsce publish",
+    "test": "mocha out/test",
     "vscode:prepublish": "npm run compile",
     "watch": "tsc -watch -p ./"
   },
