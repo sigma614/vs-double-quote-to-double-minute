@@ -3,7 +3,10 @@ import * as main from './main'
 import { Buffer } from 'node:buffer'
 
 const extensionName = 'double-quote-to-double-minute'
-
+/**
+ * ダブル引用符とダブルミニュートを置換
+ * @param context 
+ */
 export function activate(context: ExtensionContext) {
 	const command1 = commands.registerCommand(`${extensionName}.toMinute`, async () => {
 		const doc = window.activeTextEditor?.document
@@ -11,7 +14,7 @@ export function activate(context: ExtensionContext) {
 			return
 		}
 		const text = main.getQuoteToMinute(doc.getText())
-		const uri = getUri(doc.fileName)
+		const uri = getUnixUri(doc.fileName)
 		await writeText(text, uri)
 	})
 	const command2 = commands.registerCommand(`${extensionName}.toQuote`, async () => {
@@ -20,17 +23,17 @@ export function activate(context: ExtensionContext) {
 			return
 		}
 		const text = main.getMinuteToQuote(doc.getText())
-		const uri = getUri(doc.fileName)
+		const uri = getUnixUri(doc.fileName)
 		await writeText(text, uri)
 	})
 	context.subscriptions.push(command1)
 	context.subscriptions.push(command2)
 }
 /**
- * 
+ * パスをUnix形式のUrlに変換
  * @param path 
  */
-export function getUri(path: string): Uri {
+export function getUnixUri(path: string): Uri {
 	const unixPath = path.replaceAll('\\', '/')
 		.replace('c:', '/c:')
 	return Uri.parse(unixPath)

@@ -6,7 +6,6 @@
 export function getVSCodeErrorMessage(name: string): string {
   return `Error: vscode.${name} is Undefined`
 } 
-
 /**
  * ダブル引用符からダブルミニュートに置換
  * @param originalStr 
@@ -16,10 +15,9 @@ export function getQuoteToMinute(str: string): string {
   return str.replaceAll('“', '〝')
     .replaceAll('”', '〟')
 }
-
 /**
- * 
- * @param originalStr 
+ * ダブルミニュートからダブル引用符に置換
+ * @param str 
  * @returns 
  */
 export function getMinuteToQuote(str: string): string {
