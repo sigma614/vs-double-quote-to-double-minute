@@ -13,19 +13,19 @@
       {
         "command": "double-quote-to-double-minute.toMinute",
         "enablement": "config.double-quote-to-double-minute.enabled",
-        "title": "Double Quote To Double Minute"
+        "title": "%double-quote-to-double-minute.toMinuteTitle%"
       },
       {
         "command": "double-quote-to-double-minute.toQuote",
         "enablement": "config.double-quote-to-double-minute.enabled",
-        "title": "Double Quote To Double Minute"
+        "title": "%double-quote-to-double-minute.toQuoteTitle%"
       }
     ],
     "configuration": {
       "title": "Double Quote To Double Minute",
       "properties": {
         "double-quote-to-double-minute.enabled": {
-          "description": "Enable/disable this extension.",
+          "description": "%double-quote-to-double-minute.enabledDescription%",
           "type": "boolean",
           "default": true
         }

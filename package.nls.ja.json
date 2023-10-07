@@ -1,0 +1,5 @@
+{
+  "double-quote-to-double-minute.toMinuteTitle": "ダブル引用符(“”)からダブルミニュート(〝〟)へ置換",
+  "double-quote-to-double-minute.toQuoteTitle": "ダブルミニュート(〝〟)からダブル引用符(“”)へ置換",
+  "double-quote-to-double-minute.enabledDescription": "この拡張機能を有効/無効にします。"
+}

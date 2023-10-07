@@ -5,7 +5,7 @@ import { Buffer } from 'node:buffer'
 const extensionName = 'double-quote-to-double-minute'
 /**
  * ダブル引用符とダブルミニュートを置換
- * @param context 
+ * @param context
  */
 export function activate(context: ExtensionContext) {
 	const command1 = commands.registerCommand(`${extensionName}.toMinute`, async () => {
