@@ -1,0 +1,70 @@
+{
+  "name": "vs-double-quote-to-double-minute",
+  "displayName": "double-quote-to-double-minute",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "double-quote-to-double-minute.toMinute",
+        "title": "Double Quote To Double Minute"
+      },
+      {
+        "command": "double-quote-to-double-minute.toQuote",
+        "title": "Double Minute To Double Quote"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "double-quote-to-double-minute.toMinute",
+          "group": "myGroup@1"
+        },
+        {
+          "when": "editorFocus",
+          "command": "double-quote-to-double-minute.toQuote",
+          "group": "myGroup@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Double Quote To Double Minute",
+      "properties": {
+        "double-quote-to-double-minute.enabled": {
+          "type": "boolean",
+          "description": "機能",
+          "default": true
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "npm run compile && mocha out/test/suite"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  }
+}
