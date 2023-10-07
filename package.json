@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "./out/extension.js",
   "name": "vs-double-quote-to-double-minute",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "categories": [
     "Formatters"
   ],
@@ -12,6 +12,11 @@
     "commands": [
       {
         "command": "double-quote-to-double-minute.toMinute",
+        "enablement": "config.double-quote-to-double-minute.enabled",
+        "title": "Double Quote To Double Minute"
+      },
+      {
+        "command": "double-quote-to-double-minute.toQuote",
         "enablement": "config.double-quote-to-double-minute.enabled",
         "title": "Double Quote To Double Minute"
       }
