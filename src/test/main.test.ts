@@ -5,7 +5,10 @@ import * as main from '../main'
 
 suite('getVSCodeErrorMessage', () => {
   test('vscodeの要素がないエラーを表示', () => {
-    strictEqual(main.getVSCodeErrorMessage('str'), 'Error: vscode.str is Undefined')
+    strictEqual(
+      main.getVSCodeErrorMessage('str'),
+      'Error: vscode.str is Undefined'
+    )
   })
 })
 suite('getReplateQuoteToMinute', () => {

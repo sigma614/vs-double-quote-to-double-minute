@@ -7,6 +7,8 @@
         "bierner.emojisense",
         "michelemelluso.gitignore",
         "richie5um2.vscode-sort-json",
-        "ryanluker.vscode-coverage-gutters"
+        "ryanluker.vscode-coverage-gutters",
+        "gruntfuggly.todo-tree",
+        "spmeesseman.vscode-taskexplorer"
     ]
 }

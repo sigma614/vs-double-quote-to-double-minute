@@ -54,11 +54,10 @@
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "@vscode/test-electron": "^2.3.4",
-    "eslint": "^8.50.0",
+    "eslint": "^8.51.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "sinon": "^16.1.0",
     "typescript": "^5.2.2"
   },
   "engines": {
@@ -74,7 +73,8 @@
     "package": "vsce package",
     "pretest": "npm run compile && npm run lint",
     "publish": "vsce publish",
-    "test": "mocha --paralle",
+    "mocha": "mocha --paralle",
+    "test": "node ./out/test/runTest.js",
     "coverage": "nyc mocha --parallel --recursive",
     "vscode:prepublish": "npm run compile",
     "watch": "tsc -watch -p ./"
