@@ -8,7 +8,7 @@ export function run(): Promise<void> {
     ui: 'tdd',
     color: true,
   })
-
+  // TODO 他のテストはmocha parallelで行う
   const testsRoot = path.resolve(__dirname, '.')
 
   return new Promise((c, e) => {

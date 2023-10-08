@@ -5,7 +5,7 @@
   "main": "./out/extension.js",
   "name": "vs-double-quote-to-double-minute",
   "publisher": "sigma614",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "categories": [
     "Formatters"
   ],
@@ -47,6 +47,9 @@
       ]
     }
   },
+  "dependencies": {
+    "buffer": "^6.0.3"
+  },
   "devDependencies": {
     "@types/mocha": "^10.0.2",
     "@types/node": "18.x",
@@ -69,18 +72,19 @@
   },
   "scripts": {
     "compile": "tsc -p ./",
+    "coverage": "nyc mocha --parallel --recursive",
     "lint": "eslint src --ext ts",
+    "mocha": "mocha --parallel",
     "package": "vsce package",
     "pretest": "npm run compile && npm run lint",
     "publish": "vsce publish",
-    "mocha": "mocha --paralle",
     "test": "node ./out/test/runTest.js",
-    "coverage": "nyc mocha --parallel --recursive",
     "vscode:prepublish": "npm run compile",
     "watch": "tsc -watch -p ./"
   },
   "volta": {
     "node": "18.18.0",
     "npm": "10.2.0"
-  }
+  },
+  "private": false
 }

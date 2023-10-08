@@ -1,5 +1,5 @@
 import { strictEqual } from 'assert'
-import { describe, it } from 'mocha'
+import { suite, test } from 'mocha'
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -10,23 +10,23 @@ import { commands, Uri, window, workspace } from 'vscode'
 // import * as myExtension from '../../extension';
 const testFileLocation = '/test.txt'
 const extentionName = 'double-quote-to-double-minute'
-describe('機能ON/ファイルON', async function () {
+suite('機能ON/ファイルON', async function () {
   const fileUri = Uri.file(
     workspace.workspaceFolders![0].uri.fsPath + testFileLocation
   )
   const fs = workspace.fs
   const config = workspace.getConfiguration(extentionName)
   config.update('enabled', true)
-  it('更新前は引用符', async function () {
+  test('更新前は引用符', async function () {
     const readFile = await fs.readFile(fileUri)
     await strictEqual(readFile.toString(), '“”')
   })
-  it('開く前にコマンド実行しても変わらない', async () => {
+  test('開く前にコマンド実行しても変わらない', async () => {
     await commands.executeCommand(`${extentionName}.toMinute`)
     const readFile = await fs.readFile(fileUri)
     await strictEqual(readFile.toString(), '“”')
   })
-  it('開いてからコマンド実行でミニュートへ置換', async function () {
+  test('開いてからコマンド実行でミニュートへ置換', async function () {
     const doc = await workspace.openTextDocument(fileUri)
     await window.showTextDocument(doc)
     await commands.executeCommand(`${extentionName}.toMinute`)
@@ -34,7 +34,7 @@ describe('機能ON/ファイルON', async function () {
     const readFile = await fs.readFile(fileUri)
     await strictEqual(readFile.toString(), '〝〟')
   })
-  it('コマンド実行で引用符へ置換', async function () {
+  test('コマンド実行で引用符へ置換', async function () {
     await commands.executeCommand(`${extentionName}.toQuote`)
     // MEMO 無いと落ちる
     await sleep(500)

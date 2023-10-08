@@ -1,6 +1,6 @@
 import { commands, ExtensionContext, Uri, window, workspace } from 'vscode'
 import * as main from './main'
-import { Buffer } from 'node:buffer'
+import { Buffer } from 'buffer'
 
 const extensionName = 'double-quote-to-double-minute'
 /**
